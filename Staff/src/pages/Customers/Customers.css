@@ -1,0 +1,48 @@
+.user-table-format {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr ;
+    align-items: center;
+    gap: 200px;
+    padding: 12px 15px;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+    margin-left: 80px;
+    
+}
+
+.user-table-format.title {
+    background-color: #f9f9f9;
+    color: #6d6d6d;
+    
+}
+.user-table {
+    margin-top: 10px;
+}
+.cursor {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    height: 100%;
+    /* Ensure it takes the full height of the row */
+}
+.user-list h4{
+    margin-top: 50px;
+    margin-left: 80px;
+    color: #6d6d6d;
+    font-weight: 400;
+    font-style:initial;
+    
+}
+@media (max-width:600px) {
+    .user-table-format {
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 15px;
+    }
+
+    .user-table-format.title {
+        display: none;
+    }
+}

@@ -1,0 +1,100 @@
+.add{
+    width: 70%;
+    margin-left: max(5vw,25px);
+    margin-top: 50px;
+    color: #6d6d6d;
+    font-size: 16px;
+}
+.add form{
+    gap: 20px;
+}
+.add-img-upload img{
+width: 120px;
+}
+.add-product-name, .add-product-description{
+    width: max(40%,280px);
+
+}
+.add-product-name input{
+    max-width: 300px;
+    padding: 10px;
+
+}
+.add-category-cuison {
+    max-width: 200px;
+    padding: 10px;
+    /* display: flex;
+    gap: 30px; */
+    
+}
+.add-category-cuison select{
+    max-width: 120px;
+    padding: 10px;
+}
+.add-product-name,.add-product-description textarea{
+    padding: 10px;
+}
+.add-category-price{
+    display: flex;
+    gap: 30px;
+}
+
+.add-category-price select,.add-category-price input{
+    max-width: 120px;
+    padding: 10px;
+}
+.add-btn{
+    max-width: 120px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(70, 67, 67);
+    color: white;
+    cursor: pointer;
+}
+.add-ing, .add-pref {
+    max-width: 150px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(140, 135, 135);
+    color: white;
+    cursor: pointer;
+}
+.ingredient-inputs,
+.preference-inputs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Aligns inputs vertically */
+    height: 50px;
+    /* Increased height for the input row */
+    padding: 10px;
+}
+
+.ingredient-inputs .name,
+.preference-inputs .name,
+.ingredient-inputs .value,
+.preference-inputs .value {
+    flex: 1;
+    /* Adjusts equal width for both name and value inputs */
+    padding-left: 8px;
+}
+
+.ingredient-inputs .name input,
+.preference-inputs .name input,
+.ingredient-inputs .value input,
+.preference-inputs .value input {
+    width: 55%;
+    /* Allows inputs to take up almost all available space */
+    padding: 10px;
+    /* Increase padding inside inputs for better readability */
+    font-size: 16px;
+    /* Adjust font size */
+    height: 100%;
+    /* Make the input height fill the row */
+}
+
+.ingredient-inputs .value,
+.preference-inputs .value {
+    margin-left: -150px;
+    /* Reduces the gap between name and value inputs */
+}

@@ -1,0 +1,50 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+    position: relative;
+    /* Ensure it's within the normal document flow */
+    z-index: 10;
+    /* Lower value compared to the popup */
+}
+.navbar .logo {
+    width: max(5%, 80px);
+}
+.navbar.hidden {
+    display: none !important;
+}
+.navbar .navbar-right {
+    display: flex;
+        align-items: center;
+        gap: 80px;
+        /* Adjust the value as needed */
+        margin-left: auto;
+        /* Pushes the buttons to the right */
+}
+
+
+.navbar .logout-button {
+    padding: 5px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #798dc5;
+        color: #fff;
+        font-size: 14px;
+        gap: 80px;
+}
+.navbar .login-button{
+    padding: 5px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: #798dc5;
+        color: #fff;
+        font-size: 14px;
+        z-index: 10;
+}
+.login-button:hover,
+.logout-button:hover {
+    background-color: #6b7eb4;
+}

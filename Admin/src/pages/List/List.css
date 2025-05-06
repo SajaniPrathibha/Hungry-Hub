@@ -1,0 +1,173 @@
+/* List Table Format */
+.list-table-format {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr 1fr 0.5fr 0.5fr;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    border: 1px solid #cacaca;
+    font-size: 13px;
+}
+
+.list-table-format.title {
+    background-color: #f9f9f9;
+}
+
+.list-table-format img {
+    width: 45px;
+}
+.cursors {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    width: 35%;
+    height: 40%;
+    border-radius: 10px;
+    /* background-color: #dc3545; */
+    /* Ensure it takes the full height of the row */
+}
+.edit{
+    cursor: pointer;
+        display: flex;
+        justify-content: center;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically */
+        width: 50%;
+        height: 50%;
+        border-radius: 4px;
+        /* background-color: #a7c0ef; */
+}
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+    max-height: 80vh;
+    /* Limit height to 80% of the viewport */
+    overflow-y: auto;
+    /* Enable vertical scrolling if content overflows */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1010;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    /* Reduce padding */
+    margin: 8px 0;
+    /* Reduce margin */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    /* Smaller font for input fields */
+}
+
+.ingredient-item,
+.preference-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.ingredient-item input,
+.preference-item input {
+    flex: 1;
+    /* Make input fields take up available space */
+}
+
+/* Modal Buttons */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    /* Add space between buttons */
+}
+
+.modal-buttons button {
+    padding: 8px 16px;
+    /* Reduce button padding */
+    font-size: 14px;
+    /* Smaller font for buttons */
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+    background-color: #798DC5;
+    /* Save button color */
+    color: white;
+}
+
+.modal-buttons button:last-child {
+    background-color: #dc3545;
+    /* Cancel button color */
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .modal-content {
+        width: 90%;
+        padding: 10px;
+        /* Smaller padding */
+    }
+
+    .modal-content h3 {
+        font-size: 16px;
+        /* Smaller heading font size */
+    }
+
+    .modal-content input {
+        padding: 6px;
+        /* Further reduce input padding */
+        font-size: 12px;
+        /* Smaller font for input fields */
+    }
+
+    .modal-buttons button {
+        padding: 6px 12px;
+        /* Further reduce button padding */
+        font-size: 12px;
+        /* Smaller font for buttons */
+    }
+}
+
+/* Responsive List Table */
+@media (max-width: 600px) {
+    .list-table-format {
+        grid-template-columns: 1fr 3fr 1fr;
+        gap: 15px;
+    }
+
+    .list-table-format.title {
+        display: none;
+        /* Hide title on small screens */
+    }
+}

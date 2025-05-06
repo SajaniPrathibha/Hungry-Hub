@@ -1,0 +1,103 @@
+/* Overlay styling */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    /* Slightly darker background for better focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+    /* Fade-in animation */
+}
+
+/* Profile container styling */
+.profile-container {
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    /* Subtle gradient */
+    padding: 25px;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow for pop-out effect */
+    transform: scale(0.8);
+    /* Start smaller */
+    animation: scaleUp 0.3s ease-out forwards;
+    /* Scale-up animation */
+    z-index: 1100;
+}
+button.cancel:hover,
+button.close:hover {
+    background: #dc3545;
+    /* Red background */
+}
+/* Profile details */
+.profile-details p {
+    margin: 15px 0;
+    font-size: 1rem;
+    color: #333;
+    /* Better readability */
+    line-height: 1.5;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+    background: #007bff;
+    /* Vibrant blue */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s ease, transform 0.2s ease;
+    /* Smooth hover effect */
+}
+
+button:hover {
+    background: #0056b3;
+    /* Darker blue on hover */
+    transform: translateY(-3px);
+    /* Subtle lift */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(0.8);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+
+    button {
+        width: 100%;
+        /* Full-width button for smaller screens */
+        font-size: 0.9rem;
+    }
+}

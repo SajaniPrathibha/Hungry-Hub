@@ -1,0 +1,74 @@
+/* Ensure the popup covers the entire viewport, including the navbar */
+.login-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Slightly darker background for visibility */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Ensure this value is much higher than the navbar's z-index */
+}
+
+/* Styling for the popup container */
+.login-popup-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    /* Responsive design */
+    max-width: 400px;
+    /* Limit maximum width */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Add shadow for better visibility */
+}
+
+/* Styling for the heading */
+.login-popup-container h2 {
+    margin-bottom: 20px;
+}
+
+/* Input styling */
+.login-popup-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    /* Adjust font size */
+}
+
+/* Button styling */
+.login-popup-container button {
+    padding: 10px;
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    /* Adjust font size */
+}
+
+/* Hover effect for buttons */
+.login-popup-container button:hover {
+    background-color: #0056b3;
+}
+
+/* Error message styling */
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+/* Disable background scrolling */
+body.popup-active {
+    overflow: hidden;
+}

@@ -1,0 +1,137 @@
+.forecast-container {
+    width: 70%;
+    margin: 50px auto;
+    color: #333;
+    font-size: 16px;
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* background-color: #f9f9f9; */
+    /* Light gray background */
+}
+
+.forecast-container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #6d6d6d;
+    /* Dark gray text */
+}
+
+.forecast-container label {
+    margin-bottom: 10px;
+    color: #555;
+    font-weight: bold;
+}
+
+.forecast-container select,
+.forecast-container input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.forecast-container button {
+    max-width: 150px;
+    border: none;
+    padding: 10px;
+    background-color: #464343;
+    /* Dark gray background */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.forecast-container button:hover {
+    background-color: #3e3c3c;
+    /* Slightly darker on hover */
+}
+
+.forecast-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.forecast-table th,
+.forecast-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.forecast-table th {
+    background-color: #f3f4f6;
+    /* Light gray background */
+    color: #333;
+}
+
+.forecast-table td {
+    background-color: #fff;
+}
+
+.forecast-table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+    /* Alternating row color */
+}
+
+.forecast-container h2 {
+    margin-top: 20px;
+    color: #6d6d6d;
+    /* Dark gray text */
+}
+/* frontend/src/pages/Forecast.css */
+
+
+.upload-section {
+    margin-bottom: 20px;
+    
+
+}
+
+.popup {
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid #ccc;
+    top: 100px;
+    left: 60%;
+    transform: translateX(-50%);
+    z-index: 999;
+    width: 300px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup input[type="file"] {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.popup button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.popup button:hover {
+    background-color: #45a049;
+}
+.warning-banner {
+    background-color: #ffdddd;
+    border-left: 6px solid #f44336;
+    color: #a94442;
+    padding: 12px 16px;
+    margin: 15px 0;
+    font-size: 16px;
+    border-radius: 4px;
+}

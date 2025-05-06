@@ -1,0 +1,16 @@
+.advertisement-item {
+    margin-top: 30px;
+    display: flex;
+        align-items: center;
+}
+
+.advertisement-item img {
+    width: 250px;
+    height: 250px;
+    margin-right: 100px;
+}
+
+.advertisement-item p {
+    font-size: max(1vw, 18px);
+        font-weight: 200;
+}

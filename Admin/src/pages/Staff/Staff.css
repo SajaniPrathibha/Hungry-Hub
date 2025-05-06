@@ -1,0 +1,49 @@
+.register-container {
+    width: 70%;
+    margin: 50px auto;
+    color: #333;
+    /* Dark gray text */
+    font-size: 16px;
+    /* background-color: #f3f4f6; */
+    /* Light gray background */
+    padding: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.register-container h1 {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #6d6d6d;
+    /* Dark gray text */
+}
+
+.register-container input {
+    width: 100%;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    
+}
+
+.register-container button {
+    max-width: 120px;
+    border: none;
+    padding: 10px;
+    background-color: rgb(70, 67, 67);
+    /* Blue background */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* .register-container button:hover {
+    background-color: rgb(70, 67, 67);
+    /* Darker blue on hover */
+} */
