@@ -27,10 +27,10 @@ const Sidebar = () => {
           <img src={assets.order_icon} alt="" />
           <p>Staff List </p>
         </NavLink>
-        <NavLink to="/prediction" className="sidebar-option">
+        {/* <NavLink to="/prediction" className="sidebar-option">
           <img src={assets.order_icon} alt="" />
           <p>Item prediction </p>
-        </NavLink>
+        </NavLink> */}
         <NavLink to="/customers" className="sidebar-option">
           <img src={assets.order_icon} alt="" />
           <p>Customers </p>

@@ -66,7 +66,7 @@ const Orders = ({ url }) => {
 
       {/* Tabs for filtering */}
       <div className="tabs">
-        {["All", "Food processing", "Out for delivery", "Delivered", "Order is halted", "Order is closed"].map(
+        {["All", "New order", "Food processing", "Out for delivery", "Delivered", "Order is halted", "Order is closed"].map(
           (status) => (
             <button
               key={status}

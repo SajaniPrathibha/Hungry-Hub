@@ -28,7 +28,7 @@ const calculateCalories = async (ingredients, weights) => {
     });
 };
 
-// Example of using this in your controller
+//calori fetch
 const getFoodWithCalories = async (req, res) => {
     const foodId = req.params.id;
     console.log(`Fetching calories for food ID: ${foodId}`);
