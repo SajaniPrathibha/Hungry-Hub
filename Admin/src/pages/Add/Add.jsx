@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./Add.css";
 import { assets } from "../../assets/assets";
 import axios from "axios";
 import { toast } from "react-toastify";
+import PropTypes from "prop-types";
 
 const Add = ({ url }) => {
   const [image, setImage] = useState(false);
@@ -223,3 +224,6 @@ const Add = ({ url }) => {
 };
 
 export default Add;
+Add.propTypes = {
+  url: PropTypes.string.isRequired,
+};

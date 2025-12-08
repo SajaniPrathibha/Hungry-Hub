@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import "./Orders.css";
 import { toast } from "react-toastify";
 import axios from "axios";
 import { assets } from "../../assets/assets";
+import PropTypes from "prop-types";
+
 
 const Orders = ({ url }) => {
   const [orders, setOrders] = useState([]);
@@ -56,6 +58,25 @@ const Orders = ({ url }) => {
   const filteredOrders =
     filter === "All" ? orders : orders.filter((order) => order.status === filter);
 
+  // Group orders by date
+  const groupOrdersByDate = (orders) => {
+    const groups = {};
+
+    orders.forEach((order) => {
+      const date = new Date(order.date).toLocaleDateString(); // e.g. "1/20/2025"
+
+      if (!groups[date]) {
+        groups[date] = [];
+      }
+
+      groups[date].push(order);
+    });
+
+    return groups;
+  };
+  const groupedOrders = groupOrdersByDate(filteredOrders);
+
+
   useEffect(() => {
     fetchAllOrders();
   }, []);
@@ -81,9 +102,13 @@ const Orders = ({ url }) => {
 
       {/* Order list */}
       <div className="order-list">
-        {filteredOrders.map((order, index) => (
-          <div key={index} className="order-item">
-            <img src={assets.parcel_icon} alt="" />
+        {Object.keys(groupedOrders).map((date) => (
+          <div key={date} className="order-date-group">
+            <h2 className="order-date-title">{date}</h2>
+
+            {groupedOrders[date].map((order, index) => (
+              <div key={index} className="order-item">
+                <img src={assets.parcel_icon} alt="" />
             <div>
               <p className="order-item-food">
                 {order.items.map((item, index) => {
@@ -123,11 +148,16 @@ const Orders = ({ url }) => {
                 {new Date(order.orderClosed.closedAt).toLocaleString()}
               </p>
             )}
+              </div>
+          ))}
           </div>
         ))}
       </div>
     </div>
   );
+};
+Orders.propTypes = {
+  url: PropTypes.string.isRequired,
 };
 
 export default Orders;

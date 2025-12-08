@@ -12,7 +12,7 @@ const orderSchema = new mongoose.Schema({
     payment:{type:Boolean,default:false},
     numb: { type: Number, required: true },
     preferences: { type: Array, default: [] },
-    totalCalories: { type: Array, default: [] },
+    totalCalories: { type: Number, default: 0 },
     calories: [{
         foodItemId: { type: String, required: true }, // ID of the food item
         name: { type: String, required: true }, // Name of the food item

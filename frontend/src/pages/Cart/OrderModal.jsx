@@ -1,6 +1,8 @@
-import React, { useState, useContext, useEffect } from 'react';
+import {  useContext} from 'react';
 import './OrderModal.css';
 import { StoreContext } from "../../context/StoreContext";
+import PropTypes from "prop-types";
+
 
 const OrderModal = ({ ingredients = [], calorieData = {}, calorieDatas = {}, customerPreference = [], onClose, setTotalCaloriesList }) => {
     const { selectedPreferences, updateSelectedPreferences,   } = useContext(StoreContext);
@@ -16,7 +18,7 @@ const OrderModal = ({ ingredients = [], calorieData = {}, calorieDatas = {}, cus
     };
 
     const IngCalories = ingredients.reduce((total, ingredientObj) => {
-        const { name, weight } = ingredientObj;
+        const { name, } = ingredientObj;
         const calories = calorieData[name] || 0;
 
         if (calories) {
@@ -118,5 +120,15 @@ const OrderModal = ({ ingredients = [], calorieData = {}, calorieDatas = {}, cus
         </div>
     );
 };
+OrderModal.propTypes = {
+    ingredients: PropTypes.array.isRequired,
+    calorieData: PropTypes.object.isRequired,
+    calorieDatas: PropTypes.object.isRequired,
+    customerPreference: PropTypes.array.isRequired,
+    onClose: PropTypes.func.isRequired,
+    setTotalCaloriesList: PropTypes.func.isRequired,
+};
+
+
 
 export default OrderModal;

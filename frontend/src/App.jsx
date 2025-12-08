@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
@@ -9,7 +9,7 @@ import LoginPopup from "./components/LoginePopup/LoginPopup";
 import Verify from "./Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 import CalBurn from "./pages/CalBurn/CalBurn";
-import Profile from "./components/Navbar/Profile";
+// import Profile from "./components/Navbar/Profile";
 
 const App = () => {
   const [showLogin, setShowLogin] = useState(false);
