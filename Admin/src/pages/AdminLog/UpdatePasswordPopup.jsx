@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-import "./UpdatePasswordPopup.css";
 import { toast } from "react-toastify";
+import PropTypes from "prop-types";
 
-const UpdatePasswordPopup = ({ onClose }) => {
+const UpdatePasswordPopup = ({ onClose, adminEmail }) => {
+    const [email, setEmail] = useState(adminEmail || "");
     const [currentPassword, setCurrentPassword] = useState("");
     const [newPassword, setNewPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -18,7 +19,7 @@ const UpdatePasswordPopup = ({ onClose }) => {
         try {
             const response = await axios.put(
                 "http://localhost:4000/api/admin/update-password-direct",
-                { email: "admin@example.com", currentPassword, newPassword } // Replace with the admin's email
+                { email, currentPassword, newPassword }
             );
 
             if (response.data.success) {
@@ -34,16 +35,25 @@ const UpdatePasswordPopup = ({ onClose }) => {
     };
 
     return (
-        <div className="popup-overlay">
-            <div className="popup-content">
-                <h3>Change Password</h3>
-                <form onSubmit={handlePasswordUpdate}>
+        <div className="fixed inset-0 bg-[#b5c8f4] bg-opacity-50 flex items-center justify-center z-[1000]">
+            <div className="bg-white p-10 sm:p-8 rounded-lg w-[90%] max-w-[320px] shadow-lg text-center">
+                <h2 className="text-2xl p-4! font-semibold mb-5 text-gray-800">Change Password</h2>
+                <form onSubmit={handlePasswordUpdate} className="flex flex-col p-10!">
+                    <input
+                        type="email"
+                        placeholder="Admin Email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                        className="w-full p-3 pl-2! mb-5! border border-[#b5c8f4] rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    />
                     <input
                         type="password"
                         placeholder="Current Password"
                         value={currentPassword}
                         onChange={(e) => setCurrentPassword(e.target.value)}
                         required
+                        className="w-full p-3 pl-2! mb-5! border border-[#b5c8f4] rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <input
                         type="password"
@@ -51,6 +61,7 @@ const UpdatePasswordPopup = ({ onClose }) => {
                         value={newPassword}
                         onChange={(e) => setNewPassword(e.target.value)}
                         required
+                        className="w-full p-3 pl-2! mb-5! border border-[#b5c8f4] rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                     <input
                         type="password"
@@ -58,13 +69,28 @@ const UpdatePasswordPopup = ({ onClose }) => {
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         required
+                        className="w-full p-3 pl-2! mb-5! border border-[#b5c8f4] rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <button type="submit">Update Password</button>
+                    <button
+                        type="submit"
+                        className="w-2/4 p-3 bg-[#438ddd] text-white rounded-md text-base cursor-pointer transition-colors duration-300 hover:bg-blue-700 block mx-auto!"
+                    >
+                        Update Password
+                    </button>
                 </form>
-                <button onClick={onClose}>Close</button>
+                <span
+                    className="block mt-3 mb-5! text-sm text-blue-600 cursor-pointer underline hover:text-blue-700 transition-colors duration-300"
+                    onClick={onClose}
+                >
+                    Close
+                </span>
             </div>
         </div>
     );
+};
+UpdatePasswordPopup.propTypes = {
+    onClose: PropTypes.func.isRequired,
+    adminEmail: PropTypes.func.isRequired,
 };
 
 export default UpdatePasswordPopup;
