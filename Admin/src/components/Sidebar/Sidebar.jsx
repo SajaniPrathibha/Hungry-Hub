@@ -84,13 +84,13 @@ const Sidebar = () => {
           )}
         </div>
 
-        <NavLink
+        {/* <NavLink
           to="/prediction"
           className="flex items-center gap-4 max-[900px]:gap-0 max-[900px]:justify-center border border-[#a9a9a9] border-r-0 py-3 px-4 max-[900px]:px-2 rounded-tl-[3px] rounded-bl-[3px] cursor-pointer [&.active]:bg-[#b5c8f4] [&.active]:border-[#fff0ed]"
         >
           <img src={assets.pred} alt="" className="w-6 max-[900px]:w-5 !mt-2 max-[900px]:!mt-0 !ml-2 max-[900px]:!ml-0 !mb-2 max-[900px]:!mb-0" />
           <p className="text-lg max-[900px]:hidden">Item prediction</p>
-        </NavLink>
+        </NavLink> */}
 
         <NavLink
           to="/customers"
