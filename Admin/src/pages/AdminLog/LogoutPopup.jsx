@@ -6,24 +6,18 @@ const LogoutPopup = ({ onConfirm, onCancel }) => (
             <h3 className="mb-5! text-lg text-[#333] font-bold">
                 Are you sure you want to log out?
             </h3>
-            <div className="flex justify-center gap-6 mt-6">
-                <button
-                    className="px-5! py-5 text-lg font-semibold bg-[#438ddd] text-white rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 ease-in-out"
-                    onClick={onConfirm}
-                >
-                    Yes
-                </button>
-                <button
-                    className="px-5! py-5 text-lg font-semibold bg-red-400 text-white rounded-lg shadow-md hover:bg-red-700 transition-all duration-300 ease-in-out"
-                    onClick={onCancel}
-                >
-                    No
-                </button>
-            </div>
-
-
-
-
+            <button
+                className="mx-[15px]  my-2.5 px-8 py-4.5 text-base border-none bg-[#007bff] text-white rounded-[5px] cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#0056b3]"
+                onClick={onConfirm}
+            >
+                Yes
+            </button>
+            <button
+                className="mx-[15px] my-2.5 px-5 py-2.5 text-base border-none bg-[#dc3545] text-white rounded-[5px] cursor-pointer transition-colors duration-300 ease-in-out hover:bg-[#c82333]"
+                onClick={onCancel}
+            >
+                No
+            </button>
         </div>
     </div>
 );

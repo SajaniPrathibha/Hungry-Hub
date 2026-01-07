@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import PropTypes from "prop-types";
 
 const UpdatePasswordPopup = ({ onClose, adminEmail }) => {
     const [email, setEmail] = useState(adminEmail || "");
@@ -87,10 +86,6 @@ const UpdatePasswordPopup = ({ onClose, adminEmail }) => {
             </div>
         </div>
     );
-};
-UpdatePasswordPopup.propTypes = {
-    onClose: PropTypes.func.isRequired,
-    adminEmail: PropTypes.func.isRequired,
 };
 
 export default UpdatePasswordPopup;
